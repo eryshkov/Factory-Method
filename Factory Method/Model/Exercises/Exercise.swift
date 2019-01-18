@@ -16,6 +16,8 @@ protocol Exercise {
     func stop()
 }
 
+
+// MARK: - Default implementation
 extension Exercise {
     func start() {
         print("Начинаем \(name.lowercased())")
