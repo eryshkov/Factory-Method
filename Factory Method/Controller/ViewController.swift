@@ -48,7 +48,7 @@ class ViewController: UIViewController {
         let allExsTime = Double(exerciseArray.count) * (delayTimeForEx + delayTimeBetweenExs) - delayTimeBetweenExs
         _ = Timer.scheduledTimer(withTimeInterval: allExsTime, repeats: false, block: {[unowned self] (_) in
             self.activityIndicator.stopAnimating()
-            self.processLabel.text?.append("Exs have done.")
+            self.processLabel.text?.append("Все упражнения закончены.")
         })
     }
 
@@ -56,14 +56,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Exercises"
+        title = "Упражения"
         processLabel.text = ""
         
         createExercise(exName: .jumping)
         createExercise(exName: .squarts)
         createExercise(exName: .swingPress)
         
-        let doKey = UIBarButtonItem(title: "Do Exs", style: .plain, target: self, action: #selector(runExercises))
+        let doKey = UIBarButtonItem(title: "Начать", style: .plain, target: self, action: #selector(runExercises))
         let activity = UIBarButtonItem(customView: activityIndicator)
         navigationItem.rightBarButtonItems = [doKey, activity]
 
