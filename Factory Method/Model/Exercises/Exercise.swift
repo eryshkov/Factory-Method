@@ -15,3 +15,13 @@ protocol Exercise {
     func start()
     func stop()
 }
+
+extension Exercise {
+    func start() {
+        print("Начинаем \(name.lowercased())")
+    }
+    
+    func stop() {
+        print("Заканчиваем \(name.lowercased())")
+    }
+}

@@ -13,12 +13,4 @@ class Jumping: Exercise {
     
     var type: String = "Упражнение для ног"
     
-    func start() {
-        print("Начинаем \(name.lowercased())")
-    }
-    
-    func stop() {
-        print("Заканчиваем \(name.lowercased())")
-    }
-    
 }
