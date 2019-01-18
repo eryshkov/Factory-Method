@@ -61,13 +61,17 @@ class ViewController: UIViewController {
             self.processLabel.text?.append("\(self.currentTime(with: dateFormatter)): Все упражнения закончены.")
         })
     }
+    
+    @objc func clearLabel() {
+        processLabel.text = ""
+    }
 
     //MARK: -
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "Упражения"
-        processLabel.text = ""
+        clearLabel()
         
         createExercise(exName: .jumping)
         createExercise(exName: .squarts)
@@ -76,6 +80,8 @@ class ViewController: UIViewController {
         let doKey = UIBarButtonItem(title: "Начать", style: .plain, target: self, action: #selector(runExercises))
         let activity = UIBarButtonItem(customView: activityIndicator)
         navigationItem.rightBarButtonItems = [doKey, activity]
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Clear", style: .plain, target: self, action: #selector(clearLabel))
 
     }
 
