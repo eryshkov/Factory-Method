@@ -29,17 +29,27 @@ class ViewController: UIViewController {
         exerciseArray.append(newExercice)
     }
     
+    func currentTime(with formatter: DateFormatter) -> String {
+        return formatter.string(from: Date())
+    }
+    
     @objc func runExercises() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone.current
+        dateFormatter.timeStyle = .medium
+        dateFormatter.locale = Locale.current
+        dateFormatter.dateStyle = .none
+        
         for (index, ex) in exerciseArray.enumerated() {
             
             let startDelay = delayTimeBetweenExs * Double(index) + delayTimeForEx * Double(index)
             _ = Timer.scheduledTimer(withTimeInterval: startDelay, repeats: false) {[unowned self] (_) in
-                self.processLabel.text?.append("\(ex.startText())\n")
+                self.processLabel.text?.append("\(self.currentTime(with: dateFormatter)): \(ex.startText())\n")
             }
             
             let stopDelay = delayTimeForEx * Double(index + 1) + delayTimeBetweenExs * Double(index)
             _ = Timer.scheduledTimer(withTimeInterval: stopDelay, repeats: false, block: {[unowned self] (_) in
-                self.processLabel.text?.append("\(ex.stopText())\n")
+                self.processLabel.text?.append("\(self.currentTime(with: dateFormatter)): \(ex.stopText())\n")
             })
         }
         
@@ -48,7 +58,7 @@ class ViewController: UIViewController {
         let allExsTime = Double(exerciseArray.count) * (delayTimeForEx + delayTimeBetweenExs) - delayTimeBetweenExs
         _ = Timer.scheduledTimer(withTimeInterval: allExsTime, repeats: false, block: {[unowned self] (_) in
             self.activityIndicator.stopAnimating()
-            self.processLabel.text?.append("Все упражнения закончены.")
+            self.processLabel.text?.append("\(self.currentTime(with: dateFormatter)): Все упражнения закончены.")
         })
     }
 
