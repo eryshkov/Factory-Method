@@ -81,7 +81,7 @@ class ViewController: UIViewController {
         let activity = UIBarButtonItem(customView: activityIndicator)
         navigationItem.rightBarButtonItems = [doKey, activity]
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Clear", style: .plain, target: self, action: #selector(clearLabel))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Очистить", style: .plain, target: self, action: #selector(clearLabel))
 
     }
 
