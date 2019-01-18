@@ -9,8 +9,8 @@
 import Foundation
 
 //MARK: - Factory product types
-enum Exercises {
-    case jumping, squarts
+enum ExerciseType {
+    case jumping, squarts, swingPress
 }
 
 class ExerciseFactory {
@@ -18,13 +18,15 @@ class ExerciseFactory {
     static let defaultFactory = ExerciseFactory()
     
     //MARK: - Factory method
-    func createExercise(name: Exercises) -> Exercise {
+    func createExercise(name: ExerciseType) -> Exercise {
         switch name {
             
         case .jumping:
             return Jumping()
         case .squarts:
             return Squarts()
+        case .swingPress:
+            return SwingPress()
         }
     }
     

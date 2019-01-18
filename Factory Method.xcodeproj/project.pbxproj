@@ -16,6 +16,7 @@
 		5CCEF4DC21F1DDC10094AE1E /* Jumping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCEF4DB21F1DDC10094AE1E /* Jumping.swift */; };
 		5CCEF4E121F1DF240094AE1E /* Squarts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCEF4E021F1DF240094AE1E /* Squarts.swift */; };
 		5CCEF4E421F1DFEC0094AE1E /* ExerciseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCEF4E321F1DFEC0094AE1E /* ExerciseFactory.swift */; };
+		5CCEF4E721F1E4F80094AE1E /* SwingPress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCEF4E621F1E4F80094AE1E /* SwingPress.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		5CCEF4DB21F1DDC10094AE1E /* Jumping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jumping.swift; sourceTree = "<group>"; };
 		5CCEF4E021F1DF240094AE1E /* Squarts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Squarts.swift; sourceTree = "<group>"; };
 		5CCEF4E321F1DFEC0094AE1E /* ExerciseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseFactory.swift; sourceTree = "<group>"; };
+		5CCEF4E621F1E4F80094AE1E /* SwingPress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwingPress.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				5CCEF4D921F1DD620094AE1E /* Exercise.swift */,
 				5CCEF4DB21F1DDC10094AE1E /* Jumping.swift */,
 				5CCEF4E021F1DF240094AE1E /* Squarts.swift */,
+				5CCEF4E621F1E4F80094AE1E /* SwingPress.swift */,
 			);
 			path = Exercises;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 				5CCEF4CA21F1DBC90094AE1E /* ViewController.swift in Sources */,
 				5CCEF4C821F1DBC90094AE1E /* AppDelegate.swift in Sources */,
 				5CCEF4E421F1DFEC0094AE1E /* ExerciseFactory.swift in Sources */,
+				5CCEF4E721F1E4F80094AE1E /* SwingPress.swift in Sources */,
 				5CCEF4DC21F1DDC10094AE1E /* Jumping.swift in Sources */,
 				5CCEF4DA21F1DD620094AE1E /* Exercise.swift in Sources */,
 				5CCEF4E121F1DF240094AE1E /* Squarts.swift in Sources */,

@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     var exerciseArray = [Exercise]()
     
     //MARK: -
-    func createExercise(exName: Exercises) {
+    func createExercise(exName: ExerciseType) {
         let newExercice = ExerciseFactory.defaultFactory.createExercise(name: exName)
         
         exerciseArray.append(newExercice)
@@ -33,6 +33,8 @@ class ViewController: UIViewController {
         
         createExercise(exName: .jumping)
         createExercise(exName: .squarts)
+        createExercise(exName: .swingPress)
+        
         runExercises()
     }
 
