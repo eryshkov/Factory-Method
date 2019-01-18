@@ -14,16 +14,26 @@ protocol Exercise {
     
     func start()
     func stop()
+    func startText() -> String
+    func stopText() -> String
 }
 
 
 // MARK: - Default implementation
 extension Exercise {
     func start() {
-        print("Начинаем \(name.lowercased())")
+        print(startText())
     }
     
     func stop() {
-        print("Заканчиваем \(name.lowercased())")
+        print(stopText())
+    }
+    
+    func startText() -> String {
+        return "Начинаем \(name.lowercased())"
+    }
+    
+    func stopText() -> String {
+        return "Заканчиваем \(name.lowercased())"
     }
 }

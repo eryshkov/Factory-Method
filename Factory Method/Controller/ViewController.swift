@@ -10,9 +10,17 @@ import UIKit
 
 class ViewController: UIViewController {
     //MARK: -
+    @IBOutlet weak var processLabel: UILabel!
+    
+    //MARK: -
     var exerciseArray = [Exercise]()
     var delayTimeBetweenExs: TimeInterval = 2
     var delayTimeForEx: TimeInterval = 3
+    var activityIndicator: UIActivityIndicatorView  = {
+        let actInd = UIActivityIndicatorView(style: .gray)
+        actInd.hidesWhenStopped = true
+        return actInd
+    }()
     
     //MARK: -
     func createExercise(exName: ExerciseType) {
@@ -32,6 +40,14 @@ class ViewController: UIViewController {
                 ex.stop()
             })
         }
+        
+        activityIndicator.startAnimating()
+        
+        let allExsTime = Double(exerciseArray.count) * (delayTimeForEx + delayTimeBetweenExs) - delayTimeBetweenExs
+        
+        _ = Timer.scheduledTimer(withTimeInterval: allExsTime, repeats: false, block: {[unowned self] (_) in
+            self.activityIndicator.stopAnimating()
+        })
     }
 
     //MARK: -
@@ -44,7 +60,9 @@ class ViewController: UIViewController {
         createExercise(exName: .squarts)
         createExercise(exName: .swingPress)
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Do Exs", style: .plain, target: self, action: #selector(runExercises))
+        let doKey = UIBarButtonItem(title: "Do Exs", style: .plain, target: self, action: #selector(runExercises))
+        let activity = UIBarButtonItem(customView: activityIndicator)
+        navigationItem.rightBarButtonItems = [doKey, activity]
 
     }
 
