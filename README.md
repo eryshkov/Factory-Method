@@ -13,7 +13,7 @@
 <img src="https://img.shields.io/badge/licence-MIT-lightgray.svg" alt="Licence MIT"/>
 </p>
 
-[Demo video here]()
+[Demo video here](https://youtu.be/9t8KKshH45E)
 
 ## Main functionality
 * An App implements `Factory method` pattern
