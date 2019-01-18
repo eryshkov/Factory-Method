@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         exerciseArray.append(newExercice)
     }
     
-    func runExercises() {
+    @objc func runExercises() {
         for ex in exerciseArray {
             
             ex.start()
@@ -30,6 +30,9 @@ class ViewController: UIViewController {
     //MARK: -
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = "Exercises"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Do Exs", style: .plain, target: self, action: #selector(runExercises))
         
         createExercise(exName: .jumping)
         createExercise(exName: .squarts)
