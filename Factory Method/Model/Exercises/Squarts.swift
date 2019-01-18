@@ -1,5 +1,5 @@
 //
-//  Jumping.swift
+//  Squarts.swift
 //  Factory Method
 //
 //  Created by Evgeniy Ryshkov on 18/01/2019.
@@ -8,17 +8,17 @@
 
 import Foundation
 
-class Jumping: Exercise {
-    var name: String = "Прыжки"
+class Squarts: Exercise {
+    var name: String = "Приседания"
     
     var type: String = "Упражнение для ног"
     
     func start() {
-        <#code#>
+        print("Начинаем \(name.lowercased())")
     }
     
     func stop() {
-        <#code#>
+        print("Заканчиваем \(name.lowercased())")
     }
     
 }
