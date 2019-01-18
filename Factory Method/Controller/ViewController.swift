@@ -11,6 +11,8 @@ import UIKit
 class ViewController: UIViewController {
     //MARK: -
     var exerciseArray = [Exercise]()
+    var delayTimeBetweenExs: TimeInterval = 2
+    var delayTimeForEx: TimeInterval = 3
     
     //MARK: -
     func createExercise(exName: ExerciseType) {
@@ -20,10 +22,15 @@ class ViewController: UIViewController {
     }
     
     @objc func runExercises() {
-        for ex in exerciseArray {
+        for (index, ex) in exerciseArray.enumerated() {
             
-            ex.start()
-            ex.stop()
+            _ = Timer.scheduledTimer(withTimeInterval: delayTimeBetweenExs * Double(index) + delayTimeForEx * Double(index), repeats: false) { (_) in
+                ex.start()
+            }
+            
+            _ = Timer.scheduledTimer(withTimeInterval: delayTimeForEx * Double(index + 1) + delayTimeBetweenExs * Double(index), repeats: false, block: { (_) in
+                ex.stop()
+            })
         }
     }
 
@@ -32,13 +39,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         title = "Exercises"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Do Exs", style: .plain, target: self, action: #selector(runExercises))
         
         createExercise(exName: .jumping)
         createExercise(exName: .squarts)
         createExercise(exName: .swingPress)
         
-        runExercises()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Do Exs", style: .plain, target: self, action: #selector(runExercises))
+
     }
 
 
