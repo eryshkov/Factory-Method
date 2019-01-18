@@ -32,21 +32,23 @@ class ViewController: UIViewController {
     @objc func runExercises() {
         for (index, ex) in exerciseArray.enumerated() {
             
-            _ = Timer.scheduledTimer(withTimeInterval: delayTimeBetweenExs * Double(index) + delayTimeForEx * Double(index), repeats: false) { (_) in
-                ex.start()
+            let startDelay = delayTimeBetweenExs * Double(index) + delayTimeForEx * Double(index)
+            _ = Timer.scheduledTimer(withTimeInterval: startDelay, repeats: false) {[unowned self] (_) in
+                self.processLabel.text?.append("\(ex.startText())\n")
             }
             
-            _ = Timer.scheduledTimer(withTimeInterval: delayTimeForEx * Double(index + 1) + delayTimeBetweenExs * Double(index), repeats: false, block: { (_) in
-                ex.stop()
+            let stopDelay = delayTimeForEx * Double(index + 1) + delayTimeBetweenExs * Double(index)
+            _ = Timer.scheduledTimer(withTimeInterval: stopDelay, repeats: false, block: {[unowned self] (_) in
+                self.processLabel.text?.append("\(ex.stopText())\n")
             })
         }
         
         activityIndicator.startAnimating()
         
         let allExsTime = Double(exerciseArray.count) * (delayTimeForEx + delayTimeBetweenExs) - delayTimeBetweenExs
-        
         _ = Timer.scheduledTimer(withTimeInterval: allExsTime, repeats: false, block: {[unowned self] (_) in
             self.activityIndicator.stopAnimating()
+            self.processLabel.text?.append("Exs have done.")
         })
     }
 
@@ -55,6 +57,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         title = "Exercises"
+        processLabel.text = ""
         
         createExercise(exName: .jumping)
         createExercise(exName: .squarts)
