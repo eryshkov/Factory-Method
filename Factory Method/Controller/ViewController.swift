@@ -9,10 +9,31 @@
 import UIKit
 
 class ViewController: UIViewController {
+    //MARK: -
+    var exerciseArray = [Exercise]()
+    
+    //MARK: -
+    func createExercise(exName: Exercises) {
+        let newExercice = ExerciseFactory.defaultFactory.createExercise(name: exName)
+        
+        exerciseArray.append(newExercice)
+    }
+    
+    func runExercises() {
+        for ex in exerciseArray {
+            
+            ex.start()
+            ex.stop()
+        }
+    }
 
+    //MARK: -
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        createExercise(exName: .jumping)
+        createExercise(exName: .squarts)
+        runExercises()
     }
 
 
