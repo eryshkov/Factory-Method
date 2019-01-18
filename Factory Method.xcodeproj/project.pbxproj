@@ -15,6 +15,7 @@
 		5CCEF4DA21F1DD620094AE1E /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCEF4D921F1DD620094AE1E /* Exercise.swift */; };
 		5CCEF4DC21F1DDC10094AE1E /* Jumping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCEF4DB21F1DDC10094AE1E /* Jumping.swift */; };
 		5CCEF4E121F1DF240094AE1E /* Squarts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCEF4E021F1DF240094AE1E /* Squarts.swift */; };
+		5CCEF4E421F1DFEC0094AE1E /* ExerciseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCEF4E321F1DFEC0094AE1E /* ExerciseFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		5CCEF4D921F1DD620094AE1E /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		5CCEF4DB21F1DDC10094AE1E /* Jumping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jumping.swift; sourceTree = "<group>"; };
 		5CCEF4E021F1DF240094AE1E /* Squarts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Squarts.swift; sourceTree = "<group>"; };
+		5CCEF4E321F1DFEC0094AE1E /* ExerciseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 		5CCEF4DF21F1DE3F0094AE1E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5CCEF4E521F1E1770094AE1E /* Factory */,
 				5CCEF4E221F1DFA80094AE1E /* Exercises */,
 			);
 			path = Model;
@@ -103,6 +106,14 @@
 				5CCEF4E021F1DF240094AE1E /* Squarts.swift */,
 			);
 			path = Exercises;
+			sourceTree = "<group>";
+		};
+		5CCEF4E521F1E1770094AE1E /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				5CCEF4E321F1DFEC0094AE1E /* ExerciseFactory.swift */,
+			);
+			path = Factory;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,6 +189,7 @@
 			files = (
 				5CCEF4CA21F1DBC90094AE1E /* ViewController.swift in Sources */,
 				5CCEF4C821F1DBC90094AE1E /* AppDelegate.swift in Sources */,
+				5CCEF4E421F1DFEC0094AE1E /* ExerciseFactory.swift in Sources */,
 				5CCEF4DC21F1DDC10094AE1E /* Jumping.swift in Sources */,
 				5CCEF4DA21F1DD620094AE1E /* Exercise.swift in Sources */,
 				5CCEF4E121F1DF240094AE1E /* Squarts.swift in Sources */,
