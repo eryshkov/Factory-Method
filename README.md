@@ -1,6 +1,10 @@
 #  Factory Method
 
 <div align = "center">
+<img src="/screens/FactoryMethod.png" width="60%">     
+<br>
+<img src="/screens/Factory_info.jpeg" width="60%">     
+<br>
 <img src="/screens/1.jpg" width="40%">        
 <img src="/screens/2.jpg" width="40%">       
 </div>
