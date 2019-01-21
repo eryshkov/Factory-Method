@@ -8,11 +8,6 @@
 
 import Foundation
 
-//MARK: - Factory product types
-enum ExerciseType {
-    case jumping, squarts, swingPress
-}
-
 class ExerciseFactory {
     //MARK: - Singletone
     static let defaultFactory = ExerciseFactory()
